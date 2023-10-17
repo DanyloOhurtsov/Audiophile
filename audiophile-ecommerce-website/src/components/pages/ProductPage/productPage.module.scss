@@ -1,0 +1,144 @@
+@import "../../variables.module.scss";
+
+.productPage {
+  width: 100%;
+  background-color: $colorWhite_FF;
+  padding: 200px 16px 100px;
+  .contentProductPage {
+    max-width: 1110px;
+    margin: 0 auto;
+    .buttonGoBack {
+      border: none;
+      background: none;
+      outline: none;
+      color: $colorBlack_00;
+      font-family: $fontFamily;
+      font-size: $size15;
+      font-weight: $weight500;
+      opacity: 0.5;
+      cursor: pointer;
+      transition: 250ms;
+      &:hover {
+        opacity: 1;
+      }
+    }
+    .productInfo {
+      margin-top: 48px;
+      .mainInfo {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .leftBlockMainInfo {
+          width: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 40px 60px;
+          background-color: $colorWhite_F1;
+          flex-shrink: 0;
+          border-radius: 16px;
+          overflow: hidden;
+          img {
+            width: 100%;
+            object-fit: contain;
+          }
+        }
+        .rightBlockMainInfo {
+          width: 45%;
+          .new {
+            color: $colorOrange_D8;
+            font-family: $fontFamily;
+            font-size: $size14;
+            font-weight: $weight400;
+            letter-spacing: $spacing10;
+            text-transform: uppercase;
+          }
+          .productTitleName {
+            color: $colorBlack_00;
+            font-family: $fontFamily;
+            font-size: $size40;
+            font-weight: $weight700;
+            letter-spacing: $spacing1_4;
+            text-transform: uppercase;
+            margin-top: 16px;
+          }
+          .descProduct {
+            color: $colorBlack_00;
+            opacity: 0.5;
+            font-family: $fontFamily;
+            font-size: $size15;
+            font-weight: $weight500;
+            margin-top: 32px;
+          }
+          .priceProduct {
+            color: $colorBlack_00;
+            font-family: $fontFamily;
+            font-size: $size18;
+            font-weight: $weight700;
+            letter-spacing: $spacing1_2;
+            text-transform: uppercase;
+            margin-top: 32px;
+          }
+          .buttonsProductPage {
+            display: flex;
+            gap: 24px;
+            margin-top: 64px;
+            .quantityProduct {
+              display: flex;
+              padding: 16px;
+              background-color: $colorWhite_F1;
+              gap: 24px;
+              p {
+                width: 24px;
+                color: $colorBlack_00;
+                text-align: center;
+                font-family: $fontFamily;
+                font-size: $size13;
+                font-weight: $weight700;
+                letter-spacing: $spacing1;
+              }
+              button {
+                border: none;
+                outline: none;
+                background: none;
+                color: $colorGrey_43;
+                text-align: center;
+                font-family: $fontFamily;
+                font-size: $size13;
+                font-weight: $weight700;
+                letter-spacing: $spacing1;
+                cursor: pointer;
+                transition: 250ms;
+                &:hover {
+                  color: $colorBlack_00;
+                }
+                &:disabled{
+                  color: $colorGrey_79;
+                  cursor:auto;
+                }
+              }
+            }
+            .addToCartButton {
+              border: none;
+              outline: none;
+              background: none;
+              background-color: $colorOrange_D8;
+              transition: 250ms;
+              padding: 16px 32px;
+              color: $colorWhite_FF;
+              font-family: $fontFamily;
+              font-size: $size13;
+              font-weight: $weight700;
+              letter-spacing: $spacing1;
+              text-transform: uppercase;
+              cursor: pointer;
+              &:hover {
+                background-color: $colorOrange_FB;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

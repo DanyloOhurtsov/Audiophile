@@ -1,0 +1,174 @@
+@import "../../variables.module.scss";
+
+.cart {
+  padding-top: 128px;
+  max-width: 1110px;
+  margin: auto;
+  display: flex;
+  justify-content: flex-end;
+  padding-bottom: 48px;
+  .insideCart {
+    min-width: 400px;
+    padding: 32px;
+    background-color: $colorWhite_FF;
+    border-radius: 8px;
+    position: relative;
+    .topLineCart {
+      display: flex;
+      justify-content: space-between;
+      p {
+        color: $colorBlack_00;
+        font-family: $fontFamily;
+        font-size: $size18;
+        font-weight: $weight700;
+        letter-spacing: $spacing1_2;
+        text-transform: uppercase;
+      }
+      button {
+        border: none;
+        background: none;
+        outline: none;
+        color: $colorOrange_D8;
+        font-family: $fontFamily;
+        font-size: $size15;
+        font-weight: $weight500;
+        transition: 250ms;
+        cursor: pointer;
+        &:hover {
+          text-decoration-line: underline;
+        }
+      }
+    }
+    .cartItems {
+      margin-top: 48px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      .emptyCart {
+        color: $colorBlack_00;
+        text-align: center;
+        font-family: $fontFamily;
+        font-size: $size18;
+        font-weight: $weight700;
+        text-transform: uppercase;
+      }
+      .cartItem {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .leftCartItem{
+          display: flex;
+          gap: 24px;
+          .imageCartItem {
+            width: 64px;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            padding: 4px;
+            background-color: $colorWhite_F1;
+            img {
+              height: 100%;
+              object-fit: contain;
+            }
+          }
+          .textCartItem {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            .nameItem {
+              color: $colorBlack_00;
+              font-family: $fontFamily;
+              font-size: $size15;
+              font-weight: $weight700;
+            }
+            .priceItem {
+              color: $colorGrey_79;
+              font-family: $fontFamily;
+              font-size: $size14;
+              font-weight: $weight700;
+            }
+          }
+        }
+        .quantityCartItem {
+          display: flex;
+          padding: 8px 16px;
+          background-color: $colorWhite_F1;
+          gap: 24px;
+          p {
+            width: 24px;
+            color: $colorBlack_00;
+            text-align: center;
+            font-family: $fontFamily;
+            font-size: $size13;
+            font-weight: $weight700;
+            letter-spacing: $spacing1;
+          }
+          button {
+            border: none;
+            outline: none;
+            background: none;
+            color: $colorGrey_43;
+            text-align: center;
+            font-family: $fontFamily;
+            font-size: $size15;
+            font-weight: $weight700;
+            letter-spacing: $spacing1;
+            cursor: pointer;
+            &:hover {
+              color: $colorBlack_00;
+            }
+            &:disabled {
+              color: $colorGrey_79;
+              cursor: auto;
+            }
+          }
+        }
+      }
+    }
+    .totalCartBlock {
+      margin-top: 48px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      .textBlockTotal {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .text {
+          color: $colorBlack_00;
+          font-family: $fontFamily;
+          font-size: $size15;
+          font-weight: $weight500;
+          opacity: 0.5;
+        }
+        .totalPriceText {
+          color: $colorBlack_00;
+          font-family: $fontFamily;
+          font-size: $size18;
+          font-weight: $weight700;
+          text-transform: uppercase;
+        }
+      }
+      .checkoutButtonCart {
+        border: none;
+        background: none;
+        outline: none;
+        text-transform: uppercase;
+        color: $colorWhite_FF;
+        font-family: $fontFamily;
+        font-size: $size13;
+        font-weight: $weight700;
+        letter-spacing: $spacing1;
+        background-color: $colorOrange_D8;
+        transition: 250ms;
+        height: 50px;
+        &:hover {
+          background-color: $colorOrange_FB;
+        }
+      }
+    }
+  }
+}

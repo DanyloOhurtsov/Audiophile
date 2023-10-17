@@ -1,0 +1,99 @@
+@import "../../variables.module.scss";
+
+.categoriesHome_Comp {
+  width: 100%;
+  background-color: $colorWhite_FF;
+  padding: 120px 16px;
+  transition: 500ms;
+  .contentCategoriesHome {
+    max-width: 1110px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    .itemCategoryHome {
+      text-decoration: none;
+      position: relative;
+      width: calc(100% / 3);
+      background-color: $colorWhite_F1;
+      padding: 80px 16px 32px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      border-radius: 8px;
+      margin-top: 50px;
+      .imageItemCategoryHome {
+        position: absolute;
+        width: 120px;
+        transform: translateX(-50%) translateY(-50%);
+        left: 50%;
+        top: 0;
+      }
+      .titleItemCategoryHome {
+        color: $colorBlack_00;
+        text-align: center;
+        font-family: $fontFamily;
+        font-size: $size18;
+
+        font-weight: $weight700;
+
+        letter-spacing: $spacing1_2;
+        text-transform: uppercase;
+      }
+      .buttonItemCategoryHome {
+        background: none;
+        outline: none;
+        border: none;
+        color: $colorGrey_79;
+        font-family: $fontFamily;
+        font-size: $size13;
+
+        font-weight: $weight700;
+
+        letter-spacing: $spacing1;
+        text-transform: uppercase;
+        transition: 250ms;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      &:hover .buttonItemCategoryHome {
+        color: $colorOrange_D8;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .categoriesHome_Comp {
+    padding: 72px 16px;
+    .contentCategoriesHome {
+      max-width: 689px;
+      .itemCategoryHome {
+        padding: 54px 16px 32px;
+        margin-top: 40px;
+        .imageItemCategoryHome {
+          width: 80px;
+        }
+        .titleItemCategoryHome {
+          font-size: $size15;
+          letter-spacing: $spacing1_07;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .categoriesHome_Comp {
+    padding: 40px 16px;
+    .contentCategoriesHome {
+      flex-direction: column;
+      gap: 16px;
+      .itemCategoryHome {
+        width: 100%;
+      }
+    }
+  }
+}

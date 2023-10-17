@@ -1,0 +1,149 @@
+@import "../../variables.module.scss";
+
+.footerComp {
+    width: 100%;
+    padding: 0 16px;
+    .insideFooter {
+        max-width: 1110px;
+        padding: 90px 0;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 80px;
+        position: relative;
+        &::before {
+            position: absolute;
+            content: "";
+            left: 0;
+            top: 0;
+            width: 100px;
+            height: 4px;
+            background-color: $colorOrange_D8;
+        }
+        .topFooter {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 32px;
+            .firstrowTopFooter {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                width: 100%;
+                gap: 32px;
+                .buttonsFirstrowTopFooter {
+                    display: flex;
+                    gap: 32px;
+                    .btnTopFooter {
+                        text-decoration: none;
+                        text-align: center;
+                        color: $colorWhite_FF;
+                        font-family: $fontFamily;
+                        font-size: $size13;
+                        font-weight: $weight700;
+                        letter-spacing: $spacing2;
+                        text-transform: uppercase;
+                        transition: 250ms;
+                        cursor: pointer;
+                        &:active {
+                            color: $colorOrange_D8;
+                        }
+                        &:hover {
+                            color: $colorOrange_D8;
+                        }
+                    }
+                    .activeButton {
+                        color: $colorOrange_D8;
+                    }
+                }
+            }
+            .textDescFooter {
+                max-width: 540px;
+                color: $colorWhite_FF;
+                font-family: $fontFamily;
+                font-size: $size15;
+                font-weight: $weight500;
+                opacity: 0.5;
+            }
+        }
+        .bottomFooter {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            .copyrightTextBottomFooter {
+                color: $colorWhite_FF;
+                font-family: $fontFamily;
+                font-size: $size15;
+                font-weight: $weight700;
+                opacity: 0.5;
+            }
+            .socioBottomFooter {
+                display: flex;
+                align-items: center;
+                gap: 16px;
+                a {
+                    text-decoration: none;
+                    color: $colorWhite_FF;
+                    font-size: $size18;
+                    transition: 250ms;
+                    &:hover {
+                        color: $colorOrange_D8;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .footerComp {
+        .insideFooter {
+            padding: 64px 0 48px;
+            max-width: 690px;
+            .topFooter {
+                .firstrowTopFooter {
+                    flex-direction: column;
+                    align-items: flex-start;
+                }
+                .textDescFooter {
+                    width: 100%;
+                    max-width: none;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 475px) {
+    .footerComp {
+        .insideFooter {
+            padding: 40px 0;
+            &::before {
+                transform: translateX(-50%);
+                left: 50%;
+            }
+            .topFooter {
+                align-items: center;
+                gap: 48px;
+                .firstrowTopFooter {
+                    align-items: center;
+                    gap: 48px;
+                    .buttonsFirstrowTopFooter {
+                        flex-direction: column;
+                        gap: 24px;
+                    }
+                }
+                .textDescFooter {
+                    text-align: center;
+                }
+            }
+            .bottomFooter {
+                flex-direction: column;
+                gap: 48px;
+            }
+        }
+    }
+}

@@ -1,0 +1,191 @@
+@import "../../variables.module.scss";
+
+.productsHomeComp {
+  padding: 0 16px;
+  background-color: $colorWhite_FF;
+  .productsHomeInside {
+    max-width: 1110px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    .zx9Item {
+      display: flex;
+      width: 100%;
+      justify-content: flex-end;
+      background-image: url("../../../dataBase/media/backgrounds/zx9Bg.png");
+      background-size: 80%;
+      background-repeat: no-repeat;
+      background-position: -80% 5%;
+      background-color: $colorOrange_D8;
+      padding: 100px 80px;
+      border-radius: 16px;
+      .textBlockZx9 {
+        max-width: 360px;
+        display: flex;
+        gap: 32px;
+        justify-content: center;
+        flex-direction: column;
+        align-items: flex-start;
+        .text {
+          display: flex;
+          flex-direction: column;
+          gap: 24px;
+          .titleTextBlockZx9 {
+            color: $colorWhite_FF;
+            font-family: $fontFamily;
+            font-size: $size56;
+            font-weight: $weight700;
+            letter-spacing: $spacing2;
+            text-transform: uppercase;
+          }
+          .descTextBlockZx9 {
+            color: $colorWhite_FF;
+            font-family: $fontFamily;
+            font-size: $size15;
+            font-weight: $weight500;
+            opacity: 0.75;
+          }
+        }
+      }
+    }
+    .zx7Item {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 100px 80px;
+      background-image: url("../../../dataBase/media/backgrounds/speaker.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: 50% 80%;
+      gap: 32px;
+      border-radius: 16px;
+    }
+    .yx1Item {
+      display: flex;
+      width: 100%;
+      gap: 32px;
+      justify-content: space-between;
+      .leftItemYx1 {
+        width: 50%;
+        overflow: hidden;
+        border-radius: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        img {
+          object-fit: cover;
+          height: 100%;
+        }
+      }
+      .rightItemYx1 {
+        width: 50%;
+        padding: 100px 80px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 32px;
+        background-color: $colorWhite_F1;
+        border-radius: 16px;
+      }
+    }
+    .title {
+      color: var(--black, #000);
+      font-family: $fontFamily;
+      font-size: $size28;
+      font-weight: $weight700;
+      letter-spacing: $spacing2;
+      text-transform: uppercase;
+    }
+    .buttonProducts {
+      padding: 16px 32px;
+      border: 1px solid $colorBlack_00;
+      color: $colorBlack_00;
+      font-family: $fontFamily;
+      font-size: $size13;
+      font-weight: $weight700;
+      letter-spacing: $spacing1;
+      text-transform: uppercase;
+      transition: 250ms;
+      text-decoration: none;
+      &:hover {
+        background-color: $colorBlack_00;
+        color: $colorWhite_FF;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .productsHomeComp {
+    .productsHomeInside {
+      max-width: 689px;
+      gap: 32px;
+      .zx9Item {
+        padding: 360px 64px 64px;
+        justify-content: center;
+        background-size: 80%;
+        background-position: 50% -10%;
+        .textBlockZx9 {
+          align-items: center;
+          text-align: center;
+          .text {
+            gap: 0;
+          }
+        }
+      }
+      .zx7Item {
+        padding: 100px 64px;
+      }
+      .yx1Item {
+        gap: 8px;
+        .rightItemYx1 {
+          padding: 100px 40px;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 475px) {
+  .productsHomeComp {
+    padding-top: 20px;
+    .productsHomeInside {
+      max-width: 689px;
+      gap: 32px;
+      .zx9Item {
+        padding: 300px 24px 48px;
+        justify-content: center;
+        background-size: 150%;
+        background-position: 50% -10%;
+        .textBlockZx9 {
+          width: 100%;
+          gap: 40px;
+          .text {
+            gap: 8px;
+            .titleTextBlockZx9 {
+              font-size: $size36;
+              letter-spacing: $spacing1_2;
+            }
+          }
+        }
+      }
+      .zx7Item {
+        padding: 100px 24px;
+        background-position: 0% 80%;
+      }
+      .yx1Item {
+        gap: 24px;
+        flex-direction: column;
+        justify-content: flex-start;
+        .leftItemYx1 {
+          width: 100%;
+          height: 200px;
+        }
+        .rightItemYx1 {
+          width: 100%;
+          padding: 40px 24px;
+        }
+      }
+    }
+  }
+}

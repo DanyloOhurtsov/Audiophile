@@ -1,0 +1,181 @@
+@import "../../variables.module.scss";
+
+.headerComp {
+  width: 100%;
+  background-color: $colorBlack_01;
+  position: fixed;
+  top: 0;
+  z-index: 2;
+  height: 96px;
+  box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.1);
+  .contentHeaderComp {
+    max-width: calc(1110px + 32px);
+    height: 100%;
+    padding: 0 16px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    border-bottom: 1px solid $colorGrey_43;
+  }
+  .buttonsHeaderComp {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    .btnHeaderComp {
+      color: $colorWhite_FF;
+      font-family: $fontFamily;
+      font-size: $size13;
+      text-decoration: none;
+      font-weight: $weight700;
+      letter-spacing: $spacing2;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: 250ms;
+      &:hover {
+        color: $colorOrange_D8;
+      }
+    }
+    .activeButton {
+      color: $colorOrange_D8;
+    }
+  }
+  .cardHeaderComp {
+    background: none;
+    outline: none;
+    border: none;
+    color: $colorWhite-FF;
+    cursor: pointer;
+    transition: 250ms;
+    font-size: $size15;
+    &:hover {
+      color: $colorOrange_FB;
+    }
+  }
+  .logoBtn {
+    display: flex;
+    gap: 40px;
+    .mobileHeaderCompOpenBtn {
+      width: 24px;
+      height: 24px;
+      display: none;
+      background: none;
+      border: none;
+      outline: none;
+      color: $colorWhite_FF;
+      font-size: $size24;
+      cursor: pointer;
+    }
+  }
+  .mobileNavBar {
+    width: 100%;
+    height: 0px;
+    background-color: rgba(0, 255, 255, 0.37);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    transition: 300ms ease-in;
+    overflow: hidden;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    .contentMobileNavbar {
+      border-radius: 0 0 24px 24px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      padding: 56px 40px;
+      background-color: $colorWhite-FF;
+    }
+    .itemMobileNavbar {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      width: calc((100% - 32px) / 3);
+      min-width: 150px;
+      gap: 16px;
+      text-decoration: none;
+      align-items: center;
+      padding: 60px 0 24px;
+      background-color: $colorWhite_F1;
+      margin-top: 50px;
+      border-radius: 8px;
+      .imageItemMobileNavbar {
+        position: absolute;
+        transform: translateX(-50%) translateY(-50%);
+        left: 50%;
+        top: 0;
+        width: 80px;
+      }
+      .titleItemNavbar {
+        color: $colorBlack_00;
+        text-align: center;
+        font-family: $fontFamily;
+        font-size: $size15;
+
+        font-weight: $weight700;
+
+        letter-spacing: $spacing1_07;
+        text-transform: uppercase;
+      }
+      .buttonShopMobileNavbar {
+        border: none;
+        background: none;
+        outline: none;
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        color: $colorGrey_79;
+        font-family: $fontFamily;
+        font-size: $size13;
+        font-weight: $weight700;
+        letter-spacing: $spacing1;
+        text-transform: uppercase;
+      }
+    }
+  }
+  .mobileNavBar.openNavBar {
+    height: calc(100vh - 100%);
+    overflow-y: auto;
+    padding-bottom: 100px;
+  }
+}
+.none {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .headerComp {
+    .contentHeaderComp {
+      max-width: 689px;
+    }
+    .buttonsHeaderComp {
+      display: none;
+    }
+    .logoBtn {
+      .mobileHeaderCompOpenBtn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+    .mobileNavBar {
+    }
+  }
+}
+@media screen and (max-width: 475px) {
+  .headerComp {
+    .mobileNavBar {
+      .contentMobileNavbar {
+        padding: 32px;
+        flex-direction: column;
+        gap: 16px;
+      }
+      .itemMobileNavbar {
+        width: 100%;
+      }
+    }
+  }
+}
