@@ -153,9 +153,6 @@
         }
       }
       .checkoutButtonCart {
-        border: none;
-        background: none;
-        outline: none;
         text-transform: uppercase;
         color: $colorWhite_FF;
         font-family: $fontFamily;
@@ -163,6 +160,9 @@
         font-weight: $weight700;
         letter-spacing: $spacing1;
         background-color: $colorOrange_D8;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         transition: 250ms;
         height: 50px;
         &:hover {

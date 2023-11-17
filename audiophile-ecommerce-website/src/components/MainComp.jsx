@@ -13,7 +13,7 @@ export const MainComp = () => {
   const [isOpenMobileMenu, setIsOpenMobileMenu] = useState(false);
 
   return (
-    <CartPage value={{ isCartOpen }}>
+    <CartPage value={{ isCartOpen, setIsCartOpen }}>
       <HeaderComp
         value={{
           isCartOpen,

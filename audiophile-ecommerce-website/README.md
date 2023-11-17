@@ -111,45 +111,4 @@
 ├── .gitignore
 ├── package.json
 └── README.md
-
-
-
-
-
-
-│   ├── assets
-│   │   └── styles
-│   │       └── variables.module.scss
-│   │
-│   ├── components
-│   │   ├── global
-│   │   │   ├── FooterComp
-│   │   │   │   ├── footerComp.module.css
-│   │   │   │   └── FooterComp.jsx
-│   │   │   └── HeaderComp
-│   │   │       ├── footerComp.module.css
-│   │   │       └── FooterComp.jsx
-│   │   │
-│   │   ├── page
-│   │   │   ├── HomePage
-│   │   │   │   ├── HomePage.jsx
-│   │   │   │   └── homePage.module.scss
-│   │   │   └── ...
-│   │   │
-│   │   └── reusable
-│   │       ├── CardComp
-│   │       │   ├── CardComp.jsx
-│   │       │   └── cardComp.module.scss
-│   │       └── ...
-│   │
-│   ├── context
-│   │   └── context.js
-│   │
-│   └── pages
-│       ├── _app_.js
-│       └── index.js
-│
-├── .gitignore
-├── package.json
-└── README.md
 ```

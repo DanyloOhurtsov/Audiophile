@@ -3,6 +3,7 @@ import styles from "./cartPage.module.scss";
 import { CartContext } from "../../../dataBase/context/cart.context";
 import { useLocalStorageData } from "../../../dataBase/hooks/useLocalStorageData";
 import Modal from "react-modal";
+import { Link } from "react-router-dom";
 
 export function CartPage(props) {
   const { children, value } = props;
@@ -11,7 +12,8 @@ export function CartPage(props) {
     totalPrice: 0,
   });
   const { itemsToBuy, totalPrice } = cartData;
-  const { isCartOpen } = value;
+  const { isCartOpen, setIsCartOpen } = value;
+  
 
   const generateCartItems = (items) => {
     const mappedItems = items.reduce((acc, item) => {
@@ -44,6 +46,9 @@ export function CartPage(props) {
       totalPrice: 0,
     });
   };
+  const handleCartOpen = () => {
+    setIsCartOpen(!isCartOpen);
+  }
 
   const changeItemQuantityAndPrice = (itemToChange, quantity, button) => {
     const clearedItems = itemsToBuy.filter(
@@ -144,7 +149,7 @@ export function CartPage(props) {
                   })}
                 </p>
               </div>
-              <button className={styles.checkoutButtonCart}>checkout</button>
+              <Link to={'/checkout'} onClick={handleCartOpen} className={styles.checkoutButtonCart}>Checkout</Link>
             </div>
           ) : (
             ""
