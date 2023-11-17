@@ -6,6 +6,7 @@ import { HomePage } from "./pages/HomePage/HomePage";
 import { ProductPage } from "./pages/ProductPage/ProductPage";
 import { CartPage } from "./pages/CartPage/CartPage";
 import { CatalogPage } from "./pages/CatalogPage/CatalogPage";
+import { CheckoutPage } from "./pages/CheckoutPage/CheckoutPage";
 
 export const MainComp = () => {
   const [isCartOpen, setIsCartOpen] = useState(false);
@@ -30,6 +31,8 @@ export const MainComp = () => {
         <Route path="/earphones" element={<CatalogPage />} />
         {/* Product Page */}
         <Route exact path="/productpage/:productId" element={<ProductPage />} />
+        {/* Cart Page */}
+        <Route exact path="/checkout" element={<CheckoutPage/>} />
       </Routes>
       <FooterComp />
     </CartPage>

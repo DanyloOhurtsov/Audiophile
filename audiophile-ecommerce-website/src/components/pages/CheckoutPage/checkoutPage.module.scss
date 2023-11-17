@@ -1,0 +1,11 @@
+@import "../../variables.module.scss";
+
+.checkoutPage {
+    padding: 200px 16px 100px;
+    background-color: #f1f1f1;
+    .contentCheckout {
+        max-width: 1110px;
+        margin: 0 auto;
+        border: 1px solid red;
+    }
+}
