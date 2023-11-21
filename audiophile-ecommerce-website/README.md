@@ -27,6 +27,7 @@
 │   │   │   └── ProductPage
 │   │   │       ├── ProductPage.jsx
 │   │   │       └── productPage.module.scss
+│   │   │
 │   │   ├── reusable
 │   │   │   ├── CategoriesComp
 │   │   │   │   ├── CategoriesComp.jsx

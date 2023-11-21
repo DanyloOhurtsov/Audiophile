@@ -27,11 +27,9 @@
       color: $colorWhite_FF;
       font-family: $fontFamily;
       font-size: $size13;
-      text-decoration: none;
       font-weight: $weight700;
       letter-spacing: $spacing2;
       text-transform: uppercase;
-      cursor: pointer;
       transition: 250ms;
       &:hover {
         color: $colorOrange_D8;
@@ -42,9 +40,6 @@
     }
   }
   .cardHeaderComp {
-    background: none;
-    outline: none;
-    border: none;
     color: $colorWhite-FF;
     cursor: pointer;
     transition: 250ms;
@@ -60,9 +55,6 @@
       width: 24px;
       height: 24px;
       display: none;
-      background: none;
-      border: none;
-      outline: none;
       color: $colorWhite_FF;
       font-size: $size24;
       cursor: pointer;
@@ -96,7 +88,6 @@
       width: calc((100% - 32px) / 3);
       min-width: 150px;
       gap: 16px;
-      text-decoration: none;
       align-items: center;
       padding: 60px 0 24px;
       background-color: $colorWhite_F1;
@@ -121,9 +112,6 @@
         text-transform: uppercase;
       }
       .buttonShopMobileNavbar {
-        border: none;
-        background: none;
-        outline: none;
         display: flex;
         gap: 8px;
         align-items: center;

@@ -37,7 +37,6 @@
                     display: flex;
                     gap: 32px;
                     .btnTopFooter {
-                        text-decoration: none;
                         text-align: center;
                         color: $colorWhite_FF;
                         font-family: $fontFamily;
@@ -85,7 +84,6 @@
                 align-items: center;
                 gap: 16px;
                 a {
-                    text-decoration: none;
                     color: $colorWhite_FF;
                     font-size: $size18;
                     transition: 250ms;

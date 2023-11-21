@@ -25,15 +25,11 @@
         text-transform: uppercase;
       }
       button {
-        border: none;
-        background: none;
-        outline: none;
         color: $colorOrange_D8;
         font-family: $fontFamily;
         font-size: $size15;
         font-weight: $weight500;
         transition: 250ms;
-        cursor: pointer;
         &:hover {
           text-decoration-line: underline;
         }
@@ -106,16 +102,12 @@
             letter-spacing: $spacing1;
           }
           button {
-            border: none;
-            outline: none;
-            background: none;
             color: $colorGrey_43;
             text-align: center;
             font-family: $fontFamily;
             font-size: $size15;
             font-weight: $weight700;
             letter-spacing: $spacing1;
-            cursor: pointer;
             &:hover {
               color: $colorBlack_00;
             }

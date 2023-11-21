@@ -12,7 +12,6 @@
     justify-content: space-between;
     gap: 8px;
     .itemCategoryHome {
-      text-decoration: none;
       position: relative;
       width: calc(100% / 3);
       background-color: $colorWhite_F1;
@@ -42,9 +41,6 @@
         text-transform: uppercase;
       }
       .buttonItemCategoryHome {
-        background: none;
-        outline: none;
-        border: none;
         color: $colorGrey_79;
         font-family: $fontFamily;
         font-size: $size13;

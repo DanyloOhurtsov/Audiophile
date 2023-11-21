@@ -5,6 +5,9 @@ $colorBlack_00: #000;
 $colorBlack_01: #101010;
 $colorBlack_19: #191919;
 $colorGrey_79: #797979;
+$colorGrey_97: #979797;
+$colorGrey_99: #999;
+$colorGrey_7A: #7a7371;
 $colorGrey_43: #434343;
 $colorWhite_FF: #fff;
 $colorWhite_F1: #f1f1f1;
@@ -14,25 +17,40 @@ $colorWhite_FA: #fafafa;
 $fontFamily: "Manrope";
 
 // SIZES
+$size12: 12px;
 $size13: 13px;
 $size14: 14px;
 $size15: 15px;
 $size18: 18px;
 $size24: 24px;
 $size28: 28px;
+$size32: 32px;
 $size36: 36px;
 $size40: 40px;
 $size56: 56px;
+
+// STYLE
+$styleNormal: normal;
 
 // WEIGHT
 $weight400: 400;
 $weight500: 500;
 $weight700: 700;
+$weightNormal: normal;
 
 // LETTER SPACING
+$spacing-0_2: -0.214px;
+$spacing-0_25: -0.25px;
 $spacing1: 1px;
 $spacing1_07: 1.071px;
+$spacing1_14: 1.143px;
 $spacing1_2: 1.286px;
 $spacing1_4: 1.429px;
 $spacing2: 2px;
 $spacing10: 10px;
+
+// LINE HEIGHT
+$lineNormal: normal;
+
+// TRANSFORM
+$upperCase: uppercase;

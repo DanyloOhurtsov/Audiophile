@@ -8,15 +8,11 @@
     max-width: 1110px;
     margin: 0 auto;
     .buttonGoBack {
-      border: none;
-      background: none;
-      outline: none;
       color: $colorBlack_00;
       font-family: $fontFamily;
       font-size: $size15;
       font-weight: $weight500;
       opacity: 0.5;
-      cursor: pointer;
       transition: 250ms;
       &:hover {
         opacity: 1;
@@ -98,16 +94,12 @@
                 letter-spacing: $spacing1;
               }
               button {
-                border: none;
-                outline: none;
-                background: none;
                 color: $colorGrey_43;
                 text-align: center;
                 font-family: $fontFamily;
                 font-size: $size13;
                 font-weight: $weight700;
                 letter-spacing: $spacing1;
-                cursor: pointer;
                 transition: 250ms;
                 &:hover {
                   color: $colorBlack_00;
@@ -119,9 +111,6 @@
               }
             }
             .addToCartButton {
-              border: none;
-              outline: none;
-              background: none;
               background-color: $colorOrange_D8;
               transition: 250ms;
               padding: 16px 32px;
@@ -131,7 +120,6 @@
               font-weight: $weight700;
               letter-spacing: $spacing1;
               text-transform: uppercase;
-              cursor: pointer;
               &:hover {
                 background-color: $colorOrange_FB;
               }

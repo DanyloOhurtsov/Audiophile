@@ -10,3 +10,14 @@ a{
   text-decoration: none;
   color: inherit;
 }
+button{
+  background: inherit;
+  border: inherit;
+  outline: inherit;
+  cursor: pointer;
+}
+input{
+  background: inherit;
+  outline: inherit;
+  border: inherit;
+}
