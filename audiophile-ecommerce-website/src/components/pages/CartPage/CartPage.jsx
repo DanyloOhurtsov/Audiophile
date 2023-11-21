@@ -47,6 +47,7 @@ export function CartPage(props) {
     });
   };
   const handleCartOpen = () => {
+    document.querySelector("body").classList.remove("openNavBar");
     setIsCartOpen(!isCartOpen);
   }
 

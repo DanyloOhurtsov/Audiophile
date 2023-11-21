@@ -19,6 +19,7 @@
             display: flex;
             gap: 28px;
             justify-content: space-between;
+            align-items: flex-start;
             .inputCheckout {
                 border-radius: 24px;
                 background-color: #fff;
@@ -124,8 +125,25 @@
                     letter-spacing: $spacing1_2;
                     text-transform: $upperCase;
                 }
-                .checkoutButton{
-
+                .checkoutButton {
+                    width: 100%;
+                    padding: 16px 32px;
+                    display: flex;
+                    align-content: inherit;
+                    justify-content: center;
+                    text-transform: uppercase;
+                    background-color: $colorOrange_D8;
+                    color: $colorWhite_FF;
+                    font-family: $fontFamily;
+                    font-size: $size13;
+                    font-style: $styleNormal;
+                    font-weight: $weight700;
+                    line-height: $lineNormal;
+                    letter-spacing: $spacing1;
+                    transition: 250ms;
+                    &:hover{
+                        background-color: $colorOrange_FB;
+                    }
                 }
             }
         }
