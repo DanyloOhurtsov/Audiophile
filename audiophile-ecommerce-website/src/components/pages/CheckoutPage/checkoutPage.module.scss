@@ -14,6 +14,10 @@
             font-family: $fontFamily;
             font-size: $size15;
             font-weight: $weight500;
+            transition: 250ms;
+            &:hover {
+                color: $colorBlack_00;
+            }
         }
         .contentCheckout {
             display: flex;
@@ -108,6 +112,35 @@
                             width: 100%;
                         }
                     }
+                    .paymentsDetails {
+                        .inputContent {
+                            .paymentType {
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: flex-start;
+                                .selectorPaymentType {
+                                    width: calc(50% - 16px);
+                                    display: flex;
+                                    flex-direction: column;
+                                    gap: 16px;
+                                    .buttonPaymentType {
+                                        width: 100%;
+                                        display: flex;
+                                        gap: 16px;
+                                        padding: 16px 24px;
+                                        border: 1px solid $colorGrey_97;
+                                        border-radius: 8px;
+                                        .point {
+                                            width: 14px;
+                                            height: 14px;
+                                            outline: 1px solid $colorGrey_97;
+                                            border-radius: 50%;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
             }
             .summaryCheckout {
@@ -115,6 +148,9 @@
                 border-radius: 24px;
                 background-color: #fff;
                 padding: 32px;
+                display: flex;
+                flex-direction: column;
+                gap: 48px;
                 .title3SummaryCheckout {
                     color: $colorBlack_00;
                     font-family: $fontFamily;
@@ -124,6 +160,22 @@
                     line-height: $lineNormal;
                     letter-spacing: $spacing1_2;
                     text-transform: $upperCase;
+                }
+                .totalContent {
+                    .itemTotal {
+                        display: flex;
+                        justify-content: space-between;
+                        .price {
+                            text-align: right;
+                            color: $colorBlack_00;
+                            font-family: $fontFamily;
+                            font-size: $size18;
+                            font-style: $styleNormal;
+                            font-weight: $weight700;
+                            line-height: $lineNormal;
+                            text-transform: uppercase;
+                        }
+                    }
                 }
                 .checkoutButton {
                     width: 100%;
@@ -141,7 +193,7 @@
                     line-height: $lineNormal;
                     letter-spacing: $spacing1;
                     transition: 250ms;
-                    &:hover{
+                    &:hover {
                         background-color: $colorOrange_FB;
                     }
                 }
