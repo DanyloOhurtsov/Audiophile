@@ -4,6 +4,7 @@ $colorOrange_FB: #fbaf85;
 $colorBlack_00: #000;
 $colorBlack_01: #101010;
 $colorBlack_19: #191919;
+$colorGrey_80: #808080;
 $colorGrey_79: #797979;
 $colorGrey_97: #979797;
 $colorGrey_99: #999;
@@ -21,6 +22,7 @@ $size12: 12px;
 $size13: 13px;
 $size14: 14px;
 $size15: 15px;
+$size16: 16px;
 $size18: 18px;
 $size24: 24px;
 $size28: 28px;
@@ -40,6 +42,7 @@ $weightNormal: normal;
 
 // LETTER SPACING
 $spacing-0_2: -0.214px;
+$spacing-0_214: -0.214px;
 $spacing-0_25: -0.25px;
 $spacing1: 1px;
 $spacing1_07: 1.071px;
@@ -54,3 +57,6 @@ $lineNormal: normal;
 
 // TRANSFORM
 $upperCase: uppercase;
+
+// OPACITY
+$opacity0_5: 0.5;

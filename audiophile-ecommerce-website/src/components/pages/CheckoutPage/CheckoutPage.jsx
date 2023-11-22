@@ -1,8 +1,11 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import style from "./checkoutPage.module.scss";
 import { Link } from "react-router-dom";
+import { CartContext } from "../../../dataBase/context/cart.context";
 
 export const CheckoutPage = () => {
+    const cartContext = useContext(CartContext);
+    const { itemsToBuy, totalPrice } = cartContext;
     const [infoPerson, setInfoPerson] = useState({
         name: "",
         email: "",
@@ -75,6 +78,33 @@ export const CheckoutPage = () => {
     const handleChangeInput = (e) => {
         setInfoPerson({ ...infoPerson, [e.target.id]: e.target.value });
     };
+    const formatNumberWithCommas = (number) => {
+        return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    };
+    const generateCartItems = (items) => {
+        const mappedItems = items.reduce((acc, item) => {
+            if (!acc[item.id]) {
+                acc[item.id] = {
+                    item,
+                    quantity: 1,
+                };
+            } else {
+                acc[item.id].quantity++;
+            }
+
+            return acc;
+        }, {});
+
+        const sortedItems = Object.values(mappedItems).sort((a, b) => {
+            const totalPriceA = a.item.price * a.quantity;
+            const totalPriceB = b.item.price * b.quantity;
+
+            return totalPriceB - totalPriceA;
+        });
+
+        return sortedItems;
+    };
+    const resultOfGroupedItems = generateCartItems(itemsToBuy);
 
     return (
         <div className={style.checkoutPage}>
@@ -151,14 +181,15 @@ export const CheckoutPage = () => {
                                         <p className={style.labelPaymentType}>
                                             Payment Method
                                         </p>
-                                        <div className={style.selectorPaymentType}>
+                                        <div
+                                            className={
+                                                style.selectorPaymentType
+                                            }
+                                        >
                                             <button
-                                                className={`${
-                                                    infoPerson.paymentMethod ===
-                                                    "e-Money"
-                                                        ? style.activeButtonType
-                                                        : ""
-                                                } ${style.buttonPaymentType}`}
+                                                className={
+                                                    style.buttonPaymentType
+                                                }
                                                 onClick={(event) =>
                                                     handleChangeInput(event)
                                                 }
@@ -166,17 +197,21 @@ export const CheckoutPage = () => {
                                                 id="paymentMethod"
                                             >
                                                 <div
-                                                    className={style.point}
+                                                    className={`${
+                                                        style.point
+                                                    } ${
+                                                        infoPerson.paymentMethod ===
+                                                        "e-Money"
+                                                            ? style.activeButtonType
+                                                            : ""
+                                                    }`}
                                                 ></div>
                                                 <p>e-Money</p>
                                             </button>
                                             <button
-                                                className={`${
-                                                    infoPerson.paymentMethod ===
-                                                    "cash"
-                                                        ? style.activeButtonType
-                                                        : ""
-                                                } ${style.buttonPaymentType}`}
+                                                className={
+                                                    style.buttonPaymentType
+                                                }
                                                 value={"cash"}
                                                 id="paymentMethod"
                                                 onClick={(event) =>
@@ -184,7 +219,14 @@ export const CheckoutPage = () => {
                                                 }
                                             >
                                                 <div
-                                                    className={style.point}
+                                                    className={`${
+                                                        style.point
+                                                    } ${
+                                                        infoPerson.paymentMethod ===
+                                                        "cash"
+                                                            ? style.activeButtonType
+                                                            : ""
+                                                    }`}
                                                 ></div>
                                                 <p>Cash on Delivery</p>
                                             </button>
@@ -196,18 +238,71 @@ export const CheckoutPage = () => {
                     </div>
                     <div className={style.summaryCheckout}>
                         <h3 className={style.title3SummaryCheckout}>Summary</h3>
+                        <div className={style.cardProductList}>
+                            {resultOfGroupedItems.map((item) => (
+                                <div
+                                    className={style.cartItem}
+                                    key={item.item.id}
+                                >
+                                    <div className={style.leftCartItem}>
+                                        <div className={style.imageCartItem}>
+                                            <img
+                                                src={item.item.previewPhoto}
+                                                alt=""
+                                            />
+                                        </div>
+                                        <div className={style.textCartItem}>
+                                            <p className={style.nameItem}>
+                                                {item.item.shortName}
+                                            </p>
+                                            <p className={style.priceItem}>
+                                                $ {item.item.price}
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <p className={style.itemQuantity}>x{item.quantity}</p>
+                                </div>
+                            ))}
+                        </div>
                         <div className={style.totalContent}>
-                            <div className={style.itemTotal}>
-                                <p>Total</p>
-                                <p className={style.price}>$ 0.00</p>
+                            <div className={style.mainTotalContent}>
+                                <div className={style.itemTotal}>
+                                    <p className={style.title}>Total</p>
+                                    <p className={style.price}>
+                                        ${" "}
+                                        {formatNumberWithCommas(
+                                            totalPrice.toFixed(0)
+                                        )}
+                                    </p>
+                                </div>
+                                <div className={style.itemTotal}>
+                                    <p className={style.title}>Shipping</p>
+                                    <p className={style.price}>$ 40</p>
+                                </div>
+                                <div className={style.itemTotal}>
+                                    <p className={style.title}>
+                                        VAT (included)
+                                    </p>
+                                    <p className={style.price}>
+                                        ${" "}
+                                        {formatNumberWithCommas(
+                                            ((totalPrice / 100) * 1.9).toFixed(
+                                                0
+                                            )
+                                        )}
+                                    </p>
+                                </div>
                             </div>
                             <div className={style.itemTotal}>
-                                <p>Shipping</p>
-                                <p className={style.price}>$ 0.00</p>
-                            </div>
-                            <div className={style.itemTotal}>
-                                <p>VAT (included)</p>
-                                <p className={style.price}>$ 0.00</p>
+                                <p className={style.title}>Grand total</p>
+                                <p
+                                    className={`${style.price} ${style.grandTotal}`}
+                                >
+                                    ${" "}
+                                    {formatNumberWithCommas(
+                                        (totalPrice + 40).toFixed(0)
+                                    )}
+                                </p>
                             </div>
                             <button
                                 className={style.checkoutButton}

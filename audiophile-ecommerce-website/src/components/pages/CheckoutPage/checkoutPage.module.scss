@@ -118,6 +118,16 @@
                                 display: flex;
                                 justify-content: space-between;
                                 align-items: flex-start;
+                                margin-top: 16px;
+                                .labelPaymentType {
+                                    color: $colorBlack_00;
+                                    font-family: $fontFamily;
+                                    font-size: $size12;
+                                    font-style: $styleNormal;
+                                    font-weight: $weight700;
+                                    line-height: $lineNormal;
+                                    letter-spacing: $spacing-0_214;
+                                }
                                 .selectorPaymentType {
                                     width: calc(50% - 16px);
                                     display: flex;
@@ -130,11 +140,21 @@
                                         padding: 16px 24px;
                                         border: 1px solid $colorGrey_97;
                                         border-radius: 8px;
+                                        p {
+                                            pointer-events: none;
+                                        }
                                         .point {
+                                            pointer-events: none;
+                                            border: 7px solid $colorWhite_FF;
                                             width: 14px;
                                             height: 14px;
                                             outline: 1px solid $colorGrey_97;
                                             border-radius: 50%;
+                                            background-color: $colorOrange_D8;
+                                            transition: 250ms;
+                                            &.activeButtonType {
+                                                border: 3px solid $colorWhite_FF;
+                                            }
                                         }
                                     }
                                 }
@@ -161,23 +181,97 @@
                     letter-spacing: $spacing1_2;
                     text-transform: $upperCase;
                 }
-                .totalContent {
-                    .itemTotal {
+                .cardProductList {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 24px;
+                    .cartItem {
                         display: flex;
+                        align-items: center;
+                        width: 100%;
                         justify-content: space-between;
-                        .price {
-                            text-align: right;
+                        .leftCartItem {
+                            display: flex;
+                            gap: 16px;
+                            align-items: center;
+                            .imageCartItem {
+                                width: 64px;
+                                height: 64px;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                background-color: $colorWhite_F1;
+                                border-radius: 8px;
+                                img {
+                                    object-fit: contain;
+                                    height: 100%;
+                                }
+                            }
+                            .textCartItem {
+                                display: flex;
+                                flex-direction: column;
+                                gap: 8px;
+                                p {
+                                    font-family: $fontFamily;
+                                    font-style: $styleNormal;
+                                    line-height: $lineNormal;
+                                    font-weight: $weight700;
+                                }
+                                .nameItem {
+                                    color: $colorBlack_00;
+                                    font-size: $size15;
+                                }
+                                .priceItem {
+                                    color: $colorGrey_80;
+                                    font-size: $size14;
+                                }
+                            }
+                        }
+                        .itemQuantity {
                             color: $colorBlack_00;
                             font-family: $fontFamily;
-                            font-size: $size18;
+                            font-size: $size13;
                             font-style: $styleNormal;
                             font-weight: $weight700;
                             line-height: $lineNormal;
+                            letter-spacing: $spacing1;
+                        }
+                    }
+                }
+                .totalContent {
+                    .mainTotalContent {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 8px;
+                        margin-bottom: 24px;
+                    }
+                    .itemTotal {
+                        display: flex;
+                        justify-content: space-between;
+                        p {
+                            color: $colorBlack_00;
+                            font-family: $fontFamily;
+                            font-style: $styleNormal;
+                            line-height: $lineNormal;
                             text-transform: uppercase;
+                        }
+                        .title {
+                            opacity: $opacity0_5;
+                            font-size: $size16;
+                            font-weight: $weight500;
+                        }
+                        .price {
+                            text-align: right;
+                            font-size: $size18;
+                            font-weight: $weight700;
+                        }
+                        .grandTotal {
+                            color: $colorOrange_D8;
                         }
                     }
                 }
                 .checkoutButton {
+                    margin-top: 24px;
                     width: 100%;
                     padding: 16px 32px;
                     display: flex;
