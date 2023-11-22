@@ -111,6 +111,11 @@
                         .itemInputFull {
                             width: 100%;
                         }
+                        .emptyField{
+                            input{
+                                border: 1px solid red;
+                            }
+                        }
                     }
                     .paymentsDetails {
                         .inputContent {

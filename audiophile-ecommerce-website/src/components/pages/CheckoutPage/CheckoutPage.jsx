@@ -7,15 +7,13 @@ export const CheckoutPage = () => {
     const cartContext = useContext(CartContext);
     const { itemsToBuy, totalPrice } = cartContext;
     const [infoPerson, setInfoPerson] = useState({
-        name: "",
-        email: "",
-        phone: "",
-        address: "",
-        city: "",
-        zip: "",
-        paymentMethod: "e-Money",
-        emoneyNumber: "",
-        emoneyPin: "",
+        name: { value: "", filled: false },
+        email: { value: "", filled: false },
+        phone: { value: "", filled: false },
+        address: { value: "", filled: false },
+        city: { value: "", filled: false },
+        zip: { value: "", filled: false },
+        paymentMethod: { value: "e-Money", filled: true },
     });
     const inputList = {
         billingDetails: [
@@ -73,10 +71,23 @@ export const CheckoutPage = () => {
     };
 
     const handleCheckout = () => {
-        console.log(infoPerson);
+        // Валідація полів перед викликом функції checkout
+        if (
+            Object.values(infoPerson).every((field) => field.filled) &&
+            infoPerson.paymentMethod
+        ) {
+            console.log(infoPerson);
+            // Ваш код для обробки чекауту
+        } else {
+            console.log("NOT ENOUGH", infoPerson);
+            // alert("Будь ласка, заповніть всі обов'язкові поля.");
+        }
     };
     const handleChangeInput = (e) => {
-        setInfoPerson({ ...infoPerson, [e.target.id]: e.target.value });
+        setInfoPerson({
+            ...infoPerson,
+            [e.target.id]: { value: e.target.value, filled: !!e.target.value },
+        });
     };
     const formatNumberWithCommas = (number) => {
         return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -127,6 +138,10 @@ export const CheckoutPage = () => {
                                                 item.large
                                                     ? style.itemInputFull
                                                     : style.itemInputHalf
+                                            } ${
+                                                !infoPerson[item.name].filled
+                                                    ? style.emptyField
+                                                    : ""
                                             }`}
                                             key={item.id}
                                         >
@@ -154,6 +169,10 @@ export const CheckoutPage = () => {
                                                 item.large
                                                     ? style.itemInputFull
                                                     : style.itemInputHalf
+                                            } ${
+                                                !infoPerson[item.name].filled
+                                                    ? style.emptyField
+                                                    : ""
                                             }`}
                                             key={item.id}
                                         >
@@ -200,8 +219,8 @@ export const CheckoutPage = () => {
                                                     className={`${
                                                         style.point
                                                     } ${
-                                                        infoPerson.paymentMethod ===
-                                                        "e-Money"
+                                                        infoPerson.paymentMethod
+                                                            .value === "e-Money"
                                                             ? style.activeButtonType
                                                             : ""
                                                     }`}
@@ -222,8 +241,8 @@ export const CheckoutPage = () => {
                                                     className={`${
                                                         style.point
                                                     } ${
-                                                        infoPerson.paymentMethod ===
-                                                        "cash"
+                                                        infoPerson.paymentMethod
+                                                            .value === "cash"
                                                             ? style.activeButtonType
                                                             : ""
                                                     }`}
@@ -260,7 +279,9 @@ export const CheckoutPage = () => {
                                             </p>
                                         </div>
                                     </div>
-                                    <p className={style.itemQuantity}>x{item.quantity}</p>
+                                    <p className={style.itemQuantity}>
+                                        x{item.quantity}
+                                    </p>
                                 </div>
                             ))}
                         </div>
