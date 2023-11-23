@@ -3,7 +3,9 @@ import style from "./checkoutPage.module.scss";
 import { Link } from "react-router-dom";
 import { CartContext } from "../../../dataBase/context/cart.context";
 
-export const CheckoutPage = () => {
+export const CheckoutPage = ({ value }) => {
+    const {isOrderComplete, setIsOrderComplete } = value;
+
     const cartContext = useContext(CartContext);
     const { itemsToBuy, totalPrice } = cartContext;
     const [infoPerson, setInfoPerson] = useState({
@@ -15,6 +17,7 @@ export const CheckoutPage = () => {
         zip: { value: "", filled: false },
         paymentMethod: { value: "e-Money", filled: true },
     });
+
     const inputList = {
         billingDetails: [
             {
@@ -75,20 +78,25 @@ export const CheckoutPage = () => {
             Object.values(infoPerson).every((field) => field.filled) &&
             infoPerson.paymentMethod
         ) {
+            document.querySelector("body").classList.add("openNavBar");
+            setIsOrderComplete(true);
             console.log(infoPerson);
         } else {
             console.log("NOT ENOUGH", infoPerson);
         }
     };
+
     const handleChangeInput = (e) => {
         setInfoPerson({
             ...infoPerson,
             [e.target.id]: { value: e.target.value, filled: !!e.target.value },
         });
     };
+
     const formatNumberWithCommas = (number) => {
         return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     };
+
     const generateCartItems = (items) => {
         const mappedItems = items.reduce((acc, item) => {
             if (!acc[item.id]) {
@@ -99,19 +107,18 @@ export const CheckoutPage = () => {
             } else {
                 acc[item.id].quantity++;
             }
-
             return acc;
         }, {});
 
         const sortedItems = Object.values(mappedItems).sort((a, b) => {
             const totalPriceA = a.item.price * a.quantity;
             const totalPriceB = b.item.price * b.quantity;
-
             return totalPriceB - totalPriceA;
         });
 
         return sortedItems;
     };
+
     const resultOfGroupedItems = generateCartItems(itemsToBuy);
 
     return (

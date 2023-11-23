@@ -12,3 +12,12 @@ body.openNavBar{
   overflow-y: hidden;
   overflow: hidden;
 }
+
+.checkoutPageSummary{
+  /* position: absolute; */
+  /* top: 0; */
+  width: 100vw;
+  height: 500px;
+  /* left: 0; */
+  background-color: aqua;
+}

@@ -111,8 +111,8 @@
                         .itemInputFull {
                             width: 100%;
                         }
-                        .emptyField{
-                            input{
+                        .emptyField {
+                            input {
                                 border: 1px solid red;
                             }
                         }
@@ -295,6 +295,76 @@
                     &:hover {
                         background-color: $colorOrange_FB;
                     }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .checkoutPage {
+        padding: 150px 16px 100px;
+        .insideCheckout {
+            max-width: 670px;
+            gap: 24px;
+            .contentCheckout {
+                gap: 32px;
+                flex-direction: column;
+                justify-content: start;
+                align-items: flex-start;
+                .inputCheckout {
+                    padding: 32px 24px;
+                    width: 100%;
+                }
+                .summaryCheckout {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 475px) {
+    .checkoutPage {
+        padding: 100px 8px 80px;
+        .insideCheckout {
+            max-width: 327px;
+            gap: 24px;
+            .contentCheckout {
+                gap: 32px;
+                .inputCheckout {
+                    padding: 24px;
+                    .title2InputCheckout {
+                        font-size: $size28;
+                        letter-spacing: $spacing1;
+                    }
+                    .inputs {
+                        gap: 24px;
+                        .contentInputs {
+                            flex-direction: column;
+                            flex-wrap: nowrap;
+                            gap: 16px;
+                            .itemInputHalf,
+                            .itemInputFull {
+                                width: 100%;
+                            }
+                        }
+                        .paymentsDetails {
+                            .inputContent {
+                                .paymentType {
+                                    flex-direction: column;
+
+                                    .selectorPaymentType {
+                                        width: 100%;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .summaryCheckout {
+                    padding: 32px 24px;
+                    gap: 32px;
                 }
             }
         }

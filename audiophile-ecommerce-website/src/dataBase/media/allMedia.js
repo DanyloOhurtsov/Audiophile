@@ -10,6 +10,7 @@ import logo from "./logo.svg";
 // ICONS
 import cart from "./icons/bag.svg";
 import arrow_right_orange from "./icons/arrowRightOrange.svg";
+import completedOrder from "./icons/completedOrder.svg";
 // ITEMS
 // XZ_99_MarkII
 import XZ_99_MarkII_Img1 from "./items/XZ99_Mark_II/XZ_99_MarkII_Img1.png";
@@ -93,10 +94,9 @@ export const allImages = {
     icons: {
         cart,
         arrow_right_orange,
+        completedOrder,
     },
 };
-
-
 
 export const allImagesNew = {
     background: {
@@ -109,7 +109,6 @@ export const allImagesNew = {
     },
     items: {
         XZ_99_MarkII: {
-            
             XZ_99_MarkII_Img1,
             XZ_99_MarkII_Img2,
             XZ_99_MarkII_Img3,

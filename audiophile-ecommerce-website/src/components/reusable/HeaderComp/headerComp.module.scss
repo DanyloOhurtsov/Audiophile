@@ -1,169 +1,368 @@
 @import "../../variables.module.scss";
 
 .headerComp {
-  width: 100%;
-  background-color: $colorBlack_01;
-  position: fixed;
-  top: 0;
-  z-index: 2;
-  height: 96px;
-  box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.1);
-  .contentHeaderComp {
-    max-width: calc(1110px + 32px);
-    height: 100%;
-    padding: 0 16px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 32px;
-    border-bottom: 1px solid $colorGrey_43;
-  }
-  .buttonsHeaderComp {
-    display: flex;
-    align-items: center;
-    gap: 32px;
-    .btnHeaderComp {
-      color: $colorWhite_FF;
-      font-family: $fontFamily;
-      font-size: $size13;
-      font-weight: $weight700;
-      letter-spacing: $spacing2;
-      text-transform: uppercase;
-      transition: 250ms;
-      &:hover {
-        color: $colorOrange_D8;
-      }
-    }
-    .activeButton {
-      color: $colorOrange_D8;
-    }
-  }
-  .cardHeaderComp {
-    color: $colorWhite-FF;
-    cursor: pointer;
-    transition: 250ms;
-    font-size: $size15;
-    &:hover {
-      color: $colorOrange_FB;
-    }
-  }
-  .logoBtn {
-    display: flex;
-    gap: 40px;
-    .mobileHeaderCompOpenBtn {
-      width: 24px;
-      height: 24px;
-      display: none;
-      color: $colorWhite_FF;
-      font-size: $size24;
-      cursor: pointer;
-    }
-  }
-  .mobileNavBar {
     width: 100%;
-    height: 0px;
-    background-color: rgba(0, 255, 255, 0.37);
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    transition: 300ms ease-in;
-    overflow: hidden;
-    position: absolute;
-    background-color: rgba(0, 0, 0, 0.5);
-    .contentMobileNavbar {
-      border-radius: 0 0 24px 24px;
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      gap: 8px;
-      padding: 56px 40px;
-      background-color: $colorWhite-FF;
-    }
-    .itemMobileNavbar {
-      display: flex;
-      flex-direction: column;
-      position: relative;
-      width: calc((100% - 32px) / 3);
-      min-width: 150px;
-      gap: 16px;
-      align-items: center;
-      padding: 60px 0 24px;
-      background-color: $colorWhite_F1;
-      margin-top: 50px;
-      border-radius: 8px;
-      .imageItemMobileNavbar {
-        position: absolute;
-        transform: translateX(-50%) translateY(-50%);
-        left: 50%;
-        top: 0;
-        width: 80px;
-      }
-      .titleItemNavbar {
-        color: $colorBlack_00;
-        text-align: center;
-        font-family: $fontFamily;
-        font-size: $size15;
-
-        font-weight: $weight700;
-
-        letter-spacing: $spacing1_07;
-        text-transform: uppercase;
-      }
-      .buttonShopMobileNavbar {
+    background-color: $colorBlack_01;
+    position: fixed;
+    top: 0;
+    z-index: 2;
+    height: 96px;
+    box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.1);
+    .contentHeaderComp {
+        max-width: calc(1110px + 32px);
+        height: 100%;
+        padding: 0 16px;
+        margin: 0 auto;
         display: flex;
-        gap: 8px;
         align-items: center;
-        color: $colorGrey_79;
-        font-family: $fontFamily;
-        font-size: $size13;
-        font-weight: $weight700;
-        letter-spacing: $spacing1;
-        text-transform: uppercase;
-      }
+        justify-content: space-between;
+        gap: 32px;
+        border-bottom: 1px solid $colorGrey_43;
+        .checkoutPageSummary {
+            position: absolute;
+            width: 100vw;
+            min-height: 100vh;
+            background: rgba(0, 0, 0, 0.5);
+            top: 0;
+            left: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .insidePageSummary {
+                display: flex;
+                flex-direction: column;
+                gap: 32px;
+                background-color: $colorWhite_FF;
+                padding: 48px;
+                border-radius: 16px;
+                max-width: 560px;
+                img {
+                    width: 48px;
+                    height: 48px;
+                }
+                .textSection {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 8px;
+                    h4,
+                    p {
+                        color: $colorBlack_00;
+                        font-family: $fontFamily;
+                        font-style: $styleNormal;
+                        line-height: $lineNormal;
+                    }
+                    h4 {
+                        font-size: $size32;
+                        font-weight: $weight700;
+                        letter-spacing: $spacing1_14;
+                        text-transform: $upperCase;
+                    }
+                    p {
+                        font-size: $size15;
+                        font-weight: $weight500;
+                        opacity: $opacity0_5;
+                    }
+                }
+                .productList {
+                    border-radius: 24px;
+                    overflow: hidden;
+                    display: flex;
+                    min-width: 464px;
+                    .leftList {
+                        background-color: $colorWhite_F1;
+                        width: 60%;
+                        padding: 24px;
+                        .summaryOrderItem {
+                            display: flex;
+                            justify-content: space-between;
+                            .leftSummaryOrder {
+                                display: flex;
+                                gap: 16px;
+                                .imageSummaryOrder {
+                                    width: 64px;
+                                    height: 64px;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    img {
+                                        height: 100%;
+                                        object-fit: contain;
+                                    }
+                                }
+                                .textSummaryOrder {
+                                    display: flex;
+                                    flex-direction: column;
+                                    gap: 8px;
+                                    .nameItemSummaryOrder,
+                                    .priceItemSummaryOrder {
+                                        font-family: $fontFamily;
+                                        font-weight: $weight700;
+                                        font-style: $styleNormal;
+                                        line-height: $lineNormal;
+                                    }
+                                    .nameItemSummaryOrder {
+                                        color: $colorBlack_00;
+                                        font-size: $size15;
+                                    }
+                                    .priceItemSummaryOrder {
+                                        color: $colorGrey_80;
+                                        font-size: $size14;
+                                    }
+                                }
+                            }
+                            .itemQuantitySummaryOrder {
+                                color: $colorGrey_97;
+                                text-align: right;
+                                font-family: $fontFamily;
+                                font-size: $size15;
+                                font-style: $styleNormal;
+                                font-weight: $weight700;
+                                line-height: $lineNormal;
+                            }
+                        }
+                        .moreItems {
+                            width: 100%;
+                            display: flex;
+                            align-items: center;
+                            flex-direction: column;
+                            gap: 16px;
+                            margin-top: 16px;
+                            .line {
+                                width: 100%;
+                                height: 1px;
+                                background: $colorGrey_97;
+                            }
+                            p {
+                                color: $colorGrey_97;
+                                font-family: $fontFamily;
+                                font-size: $size12;
+                                font-style: $styleNormal;
+                                font-weight: $weight700;
+                                line-height: $lineNormal;
+                                letter-spacing: $spacing-0_214;
+                            }
+                        }
+                    }
+                    .rightGrandTotal {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        min-width: 200px;
+                        width: 40%;
+                        padding: 32px;
+                        background-color: $colorBlack_00;
+                        h4,
+                        p {
+                            color: $colorWhite_FF;
+                            font-family: $fontFamily;
+                            font-style: $styleNormal;
+                            line-height: $lineNormal;
+                        }
+                        h4 {
+                            opacity: $opacity0_5;
+                            font-size: $size15;
+                            font-weight: $weight500;
+                            text-transform: $upperCase;
+                        }
+                        p {
+                            font-size: $size18;
+                            font-weight: $weight700;
+                            text-transform: $upperCase;
+                        }
+                    }
+                }
+                a {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 100%;
+                    margin-top: 12px;
+                    background-color: $colorOrange_D8;
+                    padding: 16px 0;
+                    color: $colorWhite_FF;
+                    font-family: $fontFamily;
+                    font-size: $size13;
+                    font-style: $styleNormal;
+                    font-weight: $weight700;
+                    line-height: $lineNormal;
+                    letter-spacing: $spacing1;
+                    text-transform: $upperCase;
+                    transition: 250ms;
+                    &:hover {
+                        background-color: $colorOrange_FB;
+                    }
+                }
+            }
+        }
     }
-  }
-  .mobileNavBar.openNavBar {
-    height: calc(100vh - 100%);
-    overflow-y: auto;
-    padding-bottom: 100px;
-  }
+    .buttonsHeaderComp {
+        display: flex;
+        align-items: center;
+        gap: 32px;
+        .btnHeaderComp {
+            color: $colorWhite_FF;
+            font-family: $fontFamily;
+            font-size: $size13;
+            font-weight: $weight700;
+            letter-spacing: $spacing2;
+            text-transform: uppercase;
+            transition: 250ms;
+            &:hover {
+                color: $colorOrange_D8;
+            }
+        }
+        .activeButton {
+            color: $colorOrange_D8;
+        }
+    }
+    .cardHeaderComp {
+        color: $colorWhite-FF;
+        cursor: pointer;
+        transition: 250ms;
+        font-size: $size15;
+        &:hover {
+            color: $colorOrange_FB;
+        }
+    }
+    .logoBtn {
+        display: flex;
+        gap: 40px;
+        .mobileHeaderCompOpenBtn {
+            width: 24px;
+            height: 24px;
+            display: none;
+            color: $colorWhite_FF;
+            font-size: $size24;
+            cursor: pointer;
+        }
+    }
+    .mobileNavBar {
+        width: 100%;
+        height: 0px;
+        background-color: rgba(0, 255, 255, 0.37);
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        transition: 300ms ease-in;
+        overflow: hidden;
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.5);
+        .contentMobileNavbar {
+            border-radius: 0 0 24px 24px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            padding: 56px 40px;
+            background-color: $colorWhite-FF;
+        }
+        .itemMobileNavbar {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            width: calc((100% - 32px) / 3);
+            min-width: 150px;
+            gap: 16px;
+            align-items: center;
+            padding: 60px 0 24px;
+            background-color: $colorWhite_F1;
+            margin-top: 50px;
+            border-radius: 8px;
+            .imageItemMobileNavbar {
+                position: absolute;
+                transform: translateX(-50%) translateY(-50%);
+                left: 50%;
+                top: 0;
+                width: 80px;
+            }
+            .titleItemNavbar {
+                color: $colorBlack_00;
+                text-align: center;
+                font-family: $fontFamily;
+                font-size: $size15;
+
+                font-weight: $weight700;
+
+                letter-spacing: $spacing1_07;
+                text-transform: uppercase;
+            }
+            .buttonShopMobileNavbar {
+                display: flex;
+                gap: 8px;
+                align-items: center;
+                color: $colorGrey_79;
+                font-family: $fontFamily;
+                font-size: $size13;
+                font-weight: $weight700;
+                letter-spacing: $spacing1;
+                text-transform: uppercase;
+            }
+        }
+    }
+    .mobileNavBar.openNavBar {
+        height: calc(100vh - 100%);
+        overflow-y: auto;
+        padding-bottom: 100px;
+    }
 }
 .none {
-  display: none;
+    display: none;
 }
 
 @media screen and (max-width: 768px) {
-  .headerComp {
-    .contentHeaderComp {
-      max-width: 689px;
+    .headerComp {
+        .contentHeaderComp {
+            max-width: 689px;
+            .checkoutPageSummary {
+                .insidePageSummary {
+                    gap: 24px;
+                    padding: 32px;
+                    max-width: 327px;
+                    .textSection {
+                        h4 {
+                            font-size: $size24;
+                            letter-spacing: $spacing1;
+                        }
+                    }
+                    .productList {
+                        flex-direction: column;
+                        min-width: 100%;
+                        .leftList {
+                            width: 100%;
+                        }
+                        .rightGrandTotal {
+
+                            min-width: none;
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+        .buttonsHeaderComp {
+            display: none;
+        }
+        .logoBtn {
+            .mobileHeaderCompOpenBtn {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
     }
-    .buttonsHeaderComp {
-      display: none;
-    }
-    .logoBtn {
-      .mobileHeaderCompOpenBtn {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-    }
-    .mobileNavBar {
-    }
-  }
 }
 @media screen and (max-width: 475px) {
-  .headerComp {
-    .mobileNavBar {
-      .contentMobileNavbar {
-        padding: 32px;
-        flex-direction: column;
-        gap: 16px;
-      }
-      .itemMobileNavbar {
-        width: 100%;
-      }
+    .headerComp {
+        .mobileNavBar {
+            .contentMobileNavbar {
+                padding: 32px;
+                flex-direction: column;
+                gap: 16px;
+            }
+            .itemMobileNavbar {
+                width: 100%;
+            }
+        }
     }
-  }
 }
