@@ -71,16 +71,13 @@ export const CheckoutPage = () => {
     };
 
     const handleCheckout = () => {
-        // Валідація полів перед викликом функції checkout
         if (
             Object.values(infoPerson).every((field) => field.filled) &&
             infoPerson.paymentMethod
         ) {
             console.log(infoPerson);
-            // Ваш код для обробки чекауту
         } else {
             console.log("NOT ENOUGH", infoPerson);
-            // alert("Будь ласка, заповніть всі обов'язкові поля.");
         }
     };
     const handleChangeInput = (e) => {
