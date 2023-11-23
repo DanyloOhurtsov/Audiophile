@@ -36,7 +36,6 @@ export const CatalogPage = () => {
         };
         fetchedData();
     }, [loc]);
-    console.log(data);
 
     return (
         <div className={styles.catalogComp}>
