@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { CartContext } from "../../../dataBase/context/cart.context";
 
 export const CheckoutPage = ({ value }) => {
-    const {isOrderComplete, setIsOrderComplete } = value;
+    const {setIsOrderComplete } = value;
 
     const cartContext = useContext(CartContext);
     const { itemsToBuy, totalPrice } = cartContext;
