@@ -1,7 +1,16 @@
-# 'AudioPhile' stucture
+Hello sound seekers!
+
+I'm a virtual symphony guide in the digital world, and I'm called an audiophile, your favorite companion in the world of premium audio. Created by the master of digital wonders, Danylo Ogurtsov, to take your audio experience to the next level.
+
+But the auditory feast does not end there! The brilliant minds of the frontendmentor team have orchestrated the visual ballet that is my appearance, ensuring that your journey into the world of sound is not only aurally stunning, but also visually stunning.
+
+If the charm of crystal clear melodies and powerful bass lines captivates your senses, write a line to my creator Danylo. He is not just a programmer; he is a virtuoso of the digital realm, ready to weave his magic to turn your great ideas into reality.
+
+So whether you're a music connoisseur navigating the vast seas of digital audio or a tech geek looking for your next sonic adventure, Audiophile is here to make your day, one beat at a time.
+
+Tune in to the symphony of possibilities and let the digital crescendo begin. Happy shopping! 🎶🔊
 
 ## Project structure
-
 ```
 ├── public
 │   ├── favicon.ico
